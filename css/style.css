@@ -1,0 +1,62 @@
+body {
+	background-image: url(../images/IMG_0006_DxO.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;   
+	margin-bottom: 40px;
+}
+
+@font-face{
+	font-family: "FuenteTitulo";
+	src:url(../fonts/Blacksword.otf);
+}
+
+.fuente {
+	font-family: "FuenteTitulo";
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 4px black;
+}
+
+.fuentep {
+	font-family: "FuenteTitulo";
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 4px black;
+	font-size: 20px;
+}
+
+.container {
+	text-align: center;
+	position: relative;
+	top: 50px;
+}
+
+footer { 
+	border-top: 12px solid white;
+	position: relative;
+	top: 200px;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 250px;
+	background-color: #262626;
+	color: #f2f2f2;
+	text-shadow: 2px 2px 2px black;
+}
+
+footer h3 a {
+	text-decoration: none;
+	color: #fff;
+}
+
+footer h3 a:hover {
+	text-decoration: none;
+}
+
+
+.acercade {
+	font-size: 50px;
+	font: verdana;
+	text-shadow: 2px 2px 4px grey;
+}

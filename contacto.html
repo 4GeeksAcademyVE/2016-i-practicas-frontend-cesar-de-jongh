@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Contacto</title>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand fuente" href="index.html">De Jongh Photography</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="acercade.html">Acerca de <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="contacto.html">Contacto </a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+	<h1 class="fuente">Contacto</h1>
+
+<div class="container">
+
+<form id="formulario_de_contacto" role="form" method="post" onsubmit="return validarForm();">
+
+    <div class="messages"></div>
+
+    <div class="controls">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="fuentep" for="nombre">Nombre *</label>
+                    <input id="nombre" type="text" name="name" class="form-control" placeholder="Indique su nombre *" required="true">
+                    
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="fuentep" for="apellido">Apellido *</label>
+                    <input id="apellido" type="text" name="surname" class="form-control" placeholder="Indique su apellido *" required="true">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="fuentep" for="email">Email *</label>
+                    <input id="email" type="email" name="email" class="form-control" placeholder="Indique su correo electr&oacute;nico *" required="true">
+                    
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="fuentep" for="telefono">Telefono</label>
+                    <input id="telefono" type="tel" name="phone" class="form-control" placeholder="Ingrese su numero telef&oacute;nico (opcional)" required="true">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="fuentep" for="form_message">Mensaje *</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Deje su mensaje aqui *" rows="4" required="true"></textarea>
+                    
+                </div>
+            </div>
+            <div class="col-md-12">
+                <input id="enviar" type="submit" class="btn btn-success btn-send" value="Enviar">
+            </div>
+        </div>
+        </div>
+    </div>
+
+</form>
+
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3><a href="index.html">Inicio</h3></a>
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3><a href="acercade.html">Acerca de</a></h3>
+                    <ul class="list-inline">
+                      <p>De Jongh Photography es una empresa encargada a la fotograf&iacute;a en alta calidad.</p>
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3><a href="contacto.html">Contactanos</a></h3>
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; Cesar De Jongh
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
