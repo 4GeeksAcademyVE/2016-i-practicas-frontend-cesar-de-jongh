@@ -1,0 +1,16 @@
+body {
+	background: url(../images/background2.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	padding-top: 10px;
+}
+
+.img-responsive  {
+	width: 200px;	
+	margin: auto;
+	padding-bottom: 20px;
+} 
+
+.thumbnail {
+	text-decoration: none;
+}

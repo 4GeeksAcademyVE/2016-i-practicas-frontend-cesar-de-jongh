@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <title>Star Wars - Planetas</title>
+
+  </head>
+
+  <body class="planetas">
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Star Wars</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="peliculas.html">Peliculas <span class="sr-only">(current)</span></a></li>
+        <li><a href="personajes.html">Personajes </a></li>
+        <li><a href="planetas.html">Planetas </a></li>
+        <li><a href="vehiculos.html">Veh&iacute;culos </a></li>
+        <li><a href="cruceros_espaciales.html">Cruceros Espaciales </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navegaci&oacute;n <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="peliculas.html">Peliculas</a></li>
+            <li><a href="personajes.html">Personajes</a></li>
+            <li><a href="planetas.html">Planetas</a></li>
+            <li><a href="vehiculos.html">Vehiculos</a></li>
+            <li><a href="cruceros_espaciales.html">Cruceros Espaciales</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="row" style="margin-bottom: 30px;">
+    <div class="col-md-12 text-center">
+    <img src="images/Star_Wars_Yellow_Logo.svg.png" class="img-responsive" alt="Responsive image">
+</div>
+  
+
+<div class="row planets"></div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <button value="" class="anterior btn btn-primary">Anterior</button>
+    <button value="" class="verMas btn btn-primary">Ver mas</button>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+   function cargarPlanetas(_url){
+       $.ajax({
+        type: "GET",
+         url: _url,
+         dataType: "json",
+         success: function (data){
+           if(data.previous!=null){
+            $('.anterior').attr('value',data.previous);
+            $('.anterior').removeClass('disabled');
+           }else{
+             $('.anterior').addClass('disabled');
+           }
+           if(data.next!=null){
+             $('.verMas').attr('value',data.next);
+             $('.verMas').removeClass('disabled');
+           }else{
+             $('.verMas').addClass('disabled');
+           }
+           $('.planets').html("");
+           for(var i=0;i<data.results.length;i++) {
+              $('.planets').append("<div class='col-lg-4 col-md-6 col-xs-12 text center' style='height: 425px;'><a href='#' class='thumbnail' style='background:rgba(255,255,255,.8);'><img style='width:100%;' src='images/planetas/" + data.results[i].name.replace(/\s/g,"") +".jpg'><h2>"+data.results[i].name+"</h2><ul><li>Di&aacute;metro: "+data.results[i].diameter+"</li><li>Clima: "+data.results[i].climate+"</li><li>Terreno: "+data.results[i].terrain+"</li><li>Superficie de Agua: "+data.results[i].surface_water+"</li><li>Poblaci&oacute;n: "+data.results[i].population+"</li></ul></div>");
+            }
+         }
+       });
+   } 
+   cargarPlanetas("http://swapi.co/api/planets/");
+    $(".anterior").on("click", function(){
+      var url = this.value;
+      cargarPlanetas(url);
+    });
+   $(".verMas").on("click", function(){
+     var url = this.value;
+     cargarPlanetas(url);
+   });
+ });
+
+
+   
+ 
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>  
+<script type="text/javascript" src="js/javascript.js"></script>
+<script src="js/bootstrap.min.js"></script>
+  
+
+</body>
+</html>
